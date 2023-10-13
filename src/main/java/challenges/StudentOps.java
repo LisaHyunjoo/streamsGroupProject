@@ -33,4 +33,11 @@ public class StudentOps {
                 .map(s -> s.getFirst_name().toUpperCase())
                 .toList();
     }
+
+//   17. Find Student by ID: Find a student by their ID.
+    public static Optional<Student> findById(List<Student> students, Integer targetId){
+        return students.stream()
+                .filter(s -> s.getId().equals(targetId))
+                .findFirst();
+    }
 }

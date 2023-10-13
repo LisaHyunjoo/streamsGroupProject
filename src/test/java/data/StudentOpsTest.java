@@ -53,6 +53,16 @@ public class StudentOpsTest {
             assertEquals("KAITLYN", studentsWithUppercaseName.get(0));
         }
 
+        @Test
+        void shouldReturnStudentById(){
+            Optional<Student> studentById = StudentOps.findById(students, 501);
+            if(studentById.isPresent()) {
+                assertEquals(1, studentById.get().getId());
+            }else{
+                assertFalse(studentById.isPresent());
+            }
+        }
+
 
     }
 
