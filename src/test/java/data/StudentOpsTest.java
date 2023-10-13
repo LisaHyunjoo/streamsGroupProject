@@ -47,6 +47,12 @@ public class StudentOpsTest {
             assertEquals("Hazel", oldestStudent.map(Student::getFirst_name).orElse(null));
         }
 
+        @Test
+        void shouldReturnUppercaseFirstName(){
+            List<String> studentsWithUppercaseName = StudentOps.firstNameToUppercase(students);
+            assertEquals("KAITLYN", studentsWithUppercaseName.get(0));
+        }
+
 
     }
 

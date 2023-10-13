@@ -5,6 +5,7 @@ import domain.Student;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class StudentOps {
     public static List<Student> filterStudentsByGender(List<Student> students, String gender) {
@@ -24,5 +25,12 @@ public class StudentOps {
     public static Optional<Student> findOldestStudent(List<Student> students){
         return students.stream()
                 .max((s1, s2) -> s1.getDob().compareTo(s2.getDob()));
+    }
+
+//   16. Convert to Uppercase: Convert all student first names to uppercase.
+    public static List<String> firstNameToUppercase(List<Student> students){
+        return students.stream()
+                .map(s -> s.getFirst_name().toUpperCase())
+                .toList();
     }
 }

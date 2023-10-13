@@ -18,6 +18,7 @@ public class Main {
         List<Student> students = FetchData.getStudentList();
         System.out.println("Are all students are adults? " + StudentOps.allStudentsAdult(students));
         System.out.println("The oldest student is " + StudentOps.findOldestStudent(students));
+        System.out.println("Convert first name to Uppercase: " + StudentOps.firstNameToUppercase(students));
 
     }
 
