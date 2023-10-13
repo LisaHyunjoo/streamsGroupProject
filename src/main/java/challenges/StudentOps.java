@@ -4,6 +4,7 @@ import domain.Student;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public class StudentOps {
     public static List<Student> filterStudentsByGender(List<Student> students, String gender) {
@@ -17,5 +18,11 @@ public class StudentOps {
         LocalDate today = LocalDate.now();
         return students.stream()
                 .allMatch(s -> s.getDob().plusYears(18).isBefore(today));
+    }
+
+    //   15. Find Oldest Student: Find the oldest student.
+    public static Optional<Student> findOldestStudent(List<Student> students){
+        return students.stream()
+                .max((s1, s2) -> s1.getDob().compareTo(s2.getDob()));
     }
 }

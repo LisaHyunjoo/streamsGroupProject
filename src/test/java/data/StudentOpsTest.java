@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,8 +38,13 @@ public class StudentOpsTest {
 
         @Test
         void shouldCheckIfAllStudentsAreAdults(){
-//            boolean allStudentsAdult = ;
             assertFalse(StudentOps.allStudentsAdult(students));
+        }
+
+        @Test
+        void shouldReturnOldestStudent(){
+            Optional<Student> oldestStudent = StudentOps.findOldestStudent(students);
+            assertEquals("Hazel", oldestStudent.map(Student::getFirst_name).orElse(null));
         }
 
 
