@@ -3,8 +3,11 @@ package challenges;
 import domain.Student;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StudentOps {
@@ -40,4 +43,13 @@ public class StudentOps {
                 .filter(s -> s.getId().equals(targetId))
                 .findFirst();
     }
+
+//   18. Compute Age Distribution: Compute the distribution of ages (e.g., count of students for each age).
+    public static Map<Integer, Long> distributeByAge(List<Student> students){
+        return students.stream()
+                .map(s-> Period.between(s.getDob(), LocalDate.now()).getYears())
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+    }
+
+
 }

@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -61,6 +62,12 @@ public class StudentOpsTest {
             }else{
                 assertFalse(studentById.isPresent());
             }
+        }
+
+        @Test
+        void shouldReturnAgeCount(){
+            Map<Integer, Long> countByAge = StudentOps.distributeByAge(students);
+            assertEquals(2, countByAge.get(54));
         }
 
 
