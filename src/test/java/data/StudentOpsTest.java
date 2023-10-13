@@ -15,8 +15,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StudentOpsTest {
-
-
         private static List<Student> students;
 
         @BeforeAll
@@ -24,8 +22,6 @@ public class StudentOpsTest {
             // Fetch data before all tests
             students = FetchData.getStudentList();
         }
-
-
 
         @Test
         void shouldReturnEmptyListWhenNoStudentsMatchGender() {
@@ -38,5 +34,13 @@ public class StudentOpsTest {
             List<Student> filteredStudents = StudentOps.filterStudentsByGender(students, "Female");
             assertEquals("Female",filteredStudents.get(5).getGender());
         }
+
+        @Test
+        void shouldCheckIfAllStudentsAreAdults(){
+//            boolean allStudentsAdult = ;
+            assertFalse(StudentOps.allStudentsAdult(students));
+        }
+
+
     }
 
