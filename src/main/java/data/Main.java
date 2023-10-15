@@ -21,16 +21,17 @@ public class Main {
         System.out.println("The oldest student is " + StudentOps.findOldestStudent(students));
         System.out.println("Convert first name to Uppercase: " + StudentOps.firstNameToUppercase(students));
 
-//        System.out.print("Please enter an id to find a student: ");
-//        Scanner sc = new Scanner(System.in);
-//        int targetId = sc.nextInt();
-//        if(targetId <= students.size()){
-//            System.out.println("The id " + targetId + " student is " + StudentOps.findById(students, targetId));
-//        }else {
-//            System.out.println("Student not found.");
-//        }
+        System.out.print("Please enter an id to find a student: ");
+        Scanner sc = new Scanner(System.in);
+        int targetId = sc.nextInt();
+        if(targetId <= students.size()){
+            System.out.println("The id " + targetId + " student is " + StudentOps.findById(students, targetId));
+        }else {
+            System.out.println("Student not found.");
+        }
 
-        System.out.println(StudentOps.distributeByAge(students));
+        System.out.println("Students' count distributed by age: " + StudentOps.distributeByAge(students));
+        System.out.println("Students' group by age are: " + StudentOps.groupByAge(students));
 
     }
 

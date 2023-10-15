@@ -51,5 +51,16 @@ public class StudentOps {
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
     }
 
+//    Group Students by Age: Group the students by their age.
+    public static Map<Integer,List<Student>> groupByAge(List<Student> students){
+        return students.stream()
+                .collect(Collectors.groupingBy(s -> {
+                    LocalDate currentDate = LocalDate.now();
+                    Period period = Period.between(s.getDob(), currentDate);
+                    return period.getYears();
+                }));
+    }
+
+
 
 }

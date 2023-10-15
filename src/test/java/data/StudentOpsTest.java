@@ -70,6 +70,12 @@ public class StudentOpsTest {
             assertEquals(2, countByAge.get(54));
         }
 
+        @Test
+        void shouldReturnGroupByAge(){
+            Map<Integer, List<Student>> groupByAge = StudentOps.groupByAge(students);
+            assertEquals(2, groupByAge.get(54).size());
+        }
+
 
     }
 
