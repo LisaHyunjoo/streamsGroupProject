@@ -76,6 +76,12 @@ public class StudentOpsTest {
             assertEquals(2, groupByAge.get(54).size());
         }
 
+        @Test
+        void shouldReturnDeviationOfAge(){
+            double deviationByAge = StudentOps.deviationOfAge(students);
+            assertEquals(11.0, deviationByAge);
+        }
+
 
     }
 

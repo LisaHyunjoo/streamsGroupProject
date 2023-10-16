@@ -51,7 +51,7 @@ public class StudentOps {
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
     }
 
-//    Group Students by Age: Group the students by their age.
+//   19. Group Students by Age: Group the students by their age.
     public static Map<Integer,List<Student>> groupByAge(List<Student> students){
         return students.stream()
                 .collect(Collectors.groupingBy(s -> {
@@ -61,6 +61,26 @@ public class StudentOps {
                 }));
     }
 
+//  20. Calculate Age Standard Deviation: Calculate the standard deviation of ages for all students.
+    private static int calcuateAge(LocalDate dob){
+        LocalDate currentDate = LocalDate.now();
+        Period period = Period.between(dob, currentDate);
+        int age = period.getYears();
+        return age;
+    }
+    public static Double deviationOfAge(List<Student> students){
+        double averageAge = students.stream()
+                .mapToDouble(s -> calcuateAge(s.getDob()))
+                .average()
+                .orElse(0.0);
 
+        double sumOfSquares = students.stream()
+                .mapToDouble(s -> Math.pow(calcuateAge(s.getDob())- averageAge, 2))
+                .sum();
 
+        double variance = sumOfSquares/(students.size());
+
+        return (double) Math.round(Math.sqrt(variance));
+
+        }
 }
