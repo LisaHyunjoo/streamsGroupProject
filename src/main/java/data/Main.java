@@ -66,7 +66,10 @@ public class Main {
 //        double max = sc.nextDouble();
 //        System.out.println("Car lists from  " + "$" + min + " to $" + max + " are " + CarOps.carListByPriceRange(cars, min, max));
 
-//        24.
-        System.out.println("Here are car lists: " + CarOps.carModelList(cars));
+////        24.
+//        System.out.println("Here are car lists: " + CarOps.carModelList(cars));
+
+//        25.
+        System.out.println(CarOps.carModelToUpperCase(cars));
     }
 }

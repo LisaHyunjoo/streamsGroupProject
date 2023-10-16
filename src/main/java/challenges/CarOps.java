@@ -38,4 +38,10 @@ public class CarOps {
                 .toList();
     }
 
+//  25.  Map to Upper Case Makes: Create a list of car makes in uppercase from the list of cars.
+    public static List<String> carModelToUpperCase(List<Car> cars){
+        return cars.stream()
+                .map(c->c.getModel().toUpperCase())
+                .toList();
+    }
 }

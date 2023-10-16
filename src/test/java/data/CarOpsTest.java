@@ -41,4 +41,10 @@ public class CarOpsTest {
         List<String> modelList = CarOps.carModelList(cars);
         assertEquals("Rogue", modelList.get(0));
     }
+
+    @Test
+    void shouldReturnCarModelListToUpperCase(){
+        List<String> upperCaseModelList = CarOps.carModelToUpperCase(cars);
+        assertEquals("ROGUE", upperCaseModelList.get(0));
+    }
 }
