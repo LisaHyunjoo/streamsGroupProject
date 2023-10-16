@@ -1,6 +1,8 @@
 package data;
 
+import challenges.CarOps;
 import challenges.StudentOps;
+import domain.Car;
 import domain.Student;
 
 import java.io.IOException;
@@ -32,8 +34,10 @@ public class Main {
 //
 //        System.out.println("Students' count distributed by age: " + StudentOps.distributeByAge(students));
 //        System.out.println("Students' group by age are: " + StudentOps.groupByAge(students));
+//        System.out.println(StudentOps.deviationOfAge(students));
 
-        System.out.println(StudentOps.deviationOfAge(students));
+        List<Car> cars = FetchData.getCarList();
+        System.out.println(CarOps.carListByMake(cars, "BMW"));
     }
 
 }
