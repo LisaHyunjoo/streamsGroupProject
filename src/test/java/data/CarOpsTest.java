@@ -47,4 +47,11 @@ public class CarOpsTest {
         List<String> upperCaseModelList = CarOps.carModelToUpperCase(cars);
         assertEquals("ROGUE", upperCaseModelList.get(0));
     }
+
+    @Test
+    void shouldReturnCarsByYears(){
+        List<Car> carsByYear = CarOps.sortCarListByYear(cars);
+        int lastIndex = cars.size() -1;
+        assertEquals(2013, carsByYear.get(lastIndex).getYear());
+    }
 }

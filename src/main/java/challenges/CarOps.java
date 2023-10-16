@@ -3,6 +3,7 @@ package challenges;
 import domain.Car;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -42,6 +43,13 @@ public class CarOps {
     public static List<String> carModelToUpperCase(List<Car> cars){
         return cars.stream()
                 .map(c->c.getModel().toUpperCase())
+                .toList();
+    }
+
+//  26.  Sort by Year: Sort the list of cars based on the year in ascending order.
+    public static List<Car> sortCarListByYear(List<Car> cars){
+        return cars.stream()
+                .sorted(Comparator.comparingInt(Car::getYear))
                 .toList();
     }
 }
