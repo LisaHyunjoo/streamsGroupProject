@@ -34,6 +34,11 @@ public class CarOpsTest {
     void shouldReturnCarListByPriceRange(){
         List<Car> carsByPriceRange = CarOps.carListByPriceRange(cars, 70000.0, 75000.0);
         assertEquals(27, carsByPriceRange.get(0).getId());
+    }
 
+    @Test
+    void shouldReturnCarModelList(){
+        List<String> modelList = CarOps.carModelList(cars);
+        assertEquals("Rogue", modelList.get(0));
     }
 }

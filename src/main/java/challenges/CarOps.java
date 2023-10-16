@@ -4,6 +4,8 @@ import domain.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 public class CarOps {
@@ -29,5 +31,11 @@ public class CarOps {
                 .toList();
     }
 
+//  24.  Map to Model Names: Create a list of car model names from the list of cars.
+    public static List<String> carModelList(List<Car> cars){
+        return cars.stream()
+                .map(Car::getModel)
+                .toList();
+    }
 
 }
