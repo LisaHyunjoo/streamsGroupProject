@@ -22,4 +22,12 @@ public class CarOps {
                 .toList();
     }
 
+// 23.  Filter by Price: Filter the list of cars to only include cars within a price range.
+    public static List<Car> carListByPriceRange(List<Car> cars, Double minPrice, Double maxPrice){
+        return cars.stream()
+                .filter(c -> c.getPrice() >= minPrice && c.getPrice() <= maxPrice)
+                .toList();
+    }
+
+
 }

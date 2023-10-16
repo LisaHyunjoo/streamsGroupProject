@@ -29,4 +29,11 @@ public class CarOpsTest {
         List<Car> carsByYear = CarOps.carListByYear(cars, 1999);
         assertEquals(7, carsByYear.get(0).getId());
     }
+
+    @Test
+    void shouldReturnCarListByPriceRange(){
+        List<Car> carsByPriceRange = CarOps.carListByPriceRange(cars, 70000.0, 75000.0);
+        assertEquals(27, carsByPriceRange.get(0).getId());
+
+    }
 }

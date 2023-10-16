@@ -54,10 +54,16 @@ public class Main {
 //        String carMake = sc.nextLine();
 //        System.out.println("Car Lists sorted by " + carMake + ": "   + CarOps.carListByMake(cars, carMake));
 
-//        22.
-        System.out.println("Please enter a year of car: ");
-        int year = sc.nextInt();
-        System.out.println("Car Lists sorted by year " + year + ": " + CarOps.carListByYear(cars, year));
+////        22.
+//        System.out.println("Please enter a year of car: ");
+//        int year = sc.nextInt();
+//        System.out.println("Car Lists sorted by year " + year + ": " + CarOps.carListByYear(cars, year));
 
+//        23.
+        System.out.println("Please enter the minimum price: ");
+        double min = sc.nextDouble();
+        System.out.println("Please enter the maximum price: ");
+        double max = sc.nextDouble();
+        System.out.println("Car lists from  " + "$" + min + " to $" + max + " are " + CarOps.carListByPriceRange(cars, min, max));
     }
 }
