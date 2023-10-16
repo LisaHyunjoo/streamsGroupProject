@@ -2,12 +2,13 @@ package data;
 
 import challenges.CarOps;
 import domain.Car;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CarOpsTest {
     private static List<Car> cars;
@@ -20,7 +21,12 @@ public class CarOpsTest {
     @Test
     void shouldReturnCarListByMake(){
         List<Car> carsByMake = CarOps.carListByMake(cars, "BMW");
-        Assertions.assertEquals(5, carsByMake.get(0).getId());
+        assertEquals(5, carsByMake.get(0).getId());
+    }
 
+    @Test
+    void shouldReturnCarListByYear(){
+        List<Car> carsByYear = CarOps.carListByYear(cars, 1999);
+        assertEquals(7, carsByYear.get(0).getId());
     }
 }

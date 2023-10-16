@@ -48,11 +48,16 @@ public class Main {
 //        System.out.println(StudentOps.deviationOfAge(students));
 
         List<Car> cars = FetchData.getCarList();
-//21.
-        System.out.println("Please enter the car's make: ");
         Scanner sc = new Scanner(System.in);
-        String carMake = sc.nextLine();
-        System.out.println("Car Lists sorted by " + carMake  + CarOps.carListByMake(cars, carMake));
-    }
+//21.
+//        System.out.println("Please enter the car's make: ");
+//        String carMake = sc.nextLine();
+//        System.out.println("Car Lists sorted by " + carMake + ": "   + CarOps.carListByMake(cars, carMake));
 
+//        22.
+        System.out.println("Please enter a year of car: ");
+        int year = sc.nextInt();
+        System.out.println("Car Lists sorted by year " + year + ": " + CarOps.carListByYear(cars, year));
+
+    }
 }
